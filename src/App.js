@@ -4,25 +4,7 @@ import './App.css';
 import { withAuthenticator } from 'aws-amplify-react'
 import Amplify, { Auth } from 'aws-amplify';
 import aws_exports from './aws-exports';
-Amplify.configure({
-    Auth: {
-
-        // REQUIRED only for Federated Authentication - Amazon Cognito Identity Pool ID
-        identityPoolId: 'us-east-1:4da55917-eb79-4b37-b138-66a70bdaaef7',
-        
-        // REQUIRED - Amazon Cognito Region
-        region: 'us-east-1',
-
-
-        // OPTIONAL - Amazon Cognito User Pool ID
-        userPoolId: ' us-east-1_AxNxp63gL',
-
-
-        // OPTIONAL - Enforce user authentication prior to accessing AWS resources or not
-        mandatorySignIn: true,
-
-    }
-});
+Amplify.configure(awsconfig);
 
 
 class App extends Component {
